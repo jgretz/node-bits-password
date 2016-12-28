@@ -1,2 +1,18 @@
+import { query, hashData } from './util';
 
-export default () => {};
+const map = {
+  QUERY: query,
+  INSERT: hashData,
+  UPDATE: hashData,
+};
+
+export default (config = {}) => {
+  return (event) => {
+    const logic = map[event.action];
+    if (logic) {
+      return logic(config, event);
+    }
+
+    return false;
+  };
+};

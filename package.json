@@ -1,6 +1,6 @@
 {
   "name": "node-bits-password",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides the logic to configure and support password fields",
   "main": "lib/index.js",
   "scripts": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jgretz/node-bits-password#readme",
   "dependencies": {
+    "bcrypt": "^1.0.1",
     "lodash": "^4.17.2"
   },
   "devDependencies": {
