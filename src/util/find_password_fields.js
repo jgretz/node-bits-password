@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { PASSWORD } from './constants';
+import { PASSWORD } from 'node-bits';
 
 export default (schema) => {
   const keys = _.keys(schema);

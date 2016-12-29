@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import bcrypt from 'bcrypt';
+import { UPDATE, AFTER } from 'node-bits';
 
-import { UPDATE, AFTER } from './constants';
 import findPasswordFields from './find_password_fields';
 
 const DEFAULT_SALT_ROUNDS = 10;

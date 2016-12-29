@@ -1,6 +1,6 @@
 import _ from 'lodash';
+import { BEFORE } from 'node-bits';
 
-import { BEFORE } from './constants';
 import findPasswordFields from './find_password_fields';
 
 const excludePasswordFromResults = (args) => {
