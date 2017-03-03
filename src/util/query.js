@@ -1,16 +1,16 @@
 import _ from 'lodash';
-import { BEFORE } from 'node-bits';
+import {BEFORE} from 'node-bits';
 
 import findPasswordFields from './find_password_fields';
 
-const excludePasswordFromResults = (args) => {
+const excludePasswordFromResults = args => {
   const passwordFields = findPasswordFields(args.schema);
 
-  return args.result.map((item) => _.omit(item, passwordFields));
+  return args.result.map(item => _.omit(item, passwordFields));
 };
 
 export const query = (config, args) => {
-  if (config.includePasswordInQuery === undefined || config.includePasswordInQuery) {
+  if (config.includePasswordInQuery === undefined || config.includePasswordInQuery) { // eslint-disable-line
     return false;
   }
 
@@ -18,7 +18,5 @@ export const query = (config, args) => {
     return false;
   }
 
-  return {
-    result: excludePasswordFromResults(args)
-  };
+  return {result: excludePasswordFromResults(args)};
 };

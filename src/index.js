@@ -1,4 +1,4 @@
-import { query, hashData } from './util';
+import {query, hashData} from './util';
 
 const map = {
   QUERY: query,
@@ -6,8 +6,8 @@ const map = {
   UPDATE: hashData,
 };
 
-export default (config = {}) => {
-  return (event) => {
+export default (config = {}) =>
+  event => {
     const logic = map[event.action];
     if (logic) {
       return logic(config, event);
@@ -15,4 +15,3 @@ export default (config = {}) => {
 
     return false;
   };
-};

@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import bcrypt from 'bcrypt';
-import { UPDATE, AFTER } from 'node-bits';
+import {UPDATE, AFTER} from 'node-bits';
 
 import findPasswordFields from './find_password_fields';
 
@@ -16,8 +16,6 @@ const updatePasswordFields = (config, schema, data) => {
 
     return bcrypt.hashSync(value, config.saltRounds || DEFAULT_SALT_ROUNDS);
   });
-
-  return { data: mappedData };
 };
 
 export const hashData = (config, args) => {
@@ -32,5 +30,5 @@ export const hashData = (config, args) => {
 
   const data = updatePasswordFields(config, args.schema, args.data);
 
-  return { ...meta, data };
+  return {...meta, data};
 };
