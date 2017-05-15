@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import {UPDATE, AFTER} from 'node-bits';
 
 import findPasswordFields from './find_password_fields';
