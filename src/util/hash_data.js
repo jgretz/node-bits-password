@@ -30,5 +30,5 @@ export const hashData = (config, args) => {
 
   const data = updatePasswordFields(config, args.schema, args.data);
 
-  return {...meta, data};
+  return {...meta, data, options: args.options};
 };

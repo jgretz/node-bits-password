@@ -1,6 +1,6 @@
 {
   "name": "node-bits-password",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Provides the logic to configure and support password fields",
   "main": "lib/index.js",
   "scripts": {
