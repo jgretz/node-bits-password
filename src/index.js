@@ -1,17 +1,18 @@
-import {query, hashData} from './util';
+import Password from './subscribers/password';
 
-const map = {
-  QUERY: query,
-  INSERT: hashData,
-  UPDATE: hashData,
+const defaultConfig = {
+  maskPasswordsInGet: true,
 };
 
-export default (config = {}) =>
-  event => {
-    const logic = map[event.action];
-    if (logic) {
-      return logic(config, event);
-    }
+export default options =>
+  ({
+    initialize: bitsConfig => {
+      const config = {...defaultConfig, ...bitsConfig, ...options};
 
-    return false;
-  };
+      return {
+        subscribers: [
+          {implementation: new Password(config)},
+        ],
+      };
+    },
+  });
