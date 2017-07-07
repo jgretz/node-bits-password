@@ -72,7 +72,8 @@ export default class PasswordSubscriber {
     }
 
     _.forEach(passwordFields, field => {
-      req.body[field] = this.encrypt(req.body[field]);
+      const value = req.body[field];
+      req.body[field] = value ? this.encrypt(value) : value;
     });
   }
 
@@ -87,7 +88,7 @@ export default class PasswordSubscriber {
       if (value === PASSWORD_MASK) {
         req.body[field] = undefined; // eslint-disable-line
       } else {
-        req.body[field] = this.encrypt(req.body[field]);
+        req.body[field] = value ? this.encrypt(value) : value;
       }
     });
   }
